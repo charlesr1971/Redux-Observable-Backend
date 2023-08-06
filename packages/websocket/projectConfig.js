@@ -1,3 +1,3 @@
 module.exports = {
-	applicationName: 'ghadyaniFrameworkWebSockets',
+	applicationName: 'ghadyaniFrameworkWebSockets'
 }

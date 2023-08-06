@@ -15,4 +15,7 @@ module.exports = {
 			),
 		}
 	},
+	rules: {
+		'no-error-on-unmatched-pattern': true,
+	},
 }

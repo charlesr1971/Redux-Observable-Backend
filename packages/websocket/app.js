@@ -10,19 +10,27 @@ const { createEpicMiddleware } = require('redux-observable')
 const { of } = require('rxjs')
 const { tap } = require('rxjs/operators')
 
+console.log("A:");
+
 const {
 	createHttpServers,
 	createWebSocketServers,
 } = require('./')
+
+console.log("B:");
 
 const {
 	rootEpic,
 	rootReducer,
 } = require('$redux')
 
+console.log("C:");
+
 const actionLoggerMiddleware = (
 	createActionLoggerMiddleware()
 )
+
+console.log("D:");
 
 const epicMiddleware = createEpicMiddleware()
 
@@ -33,6 +41,8 @@ const middleware = (
 	)
 )
 
+console.log("E:");
+
 const store = (
 	createStore(
 		rootReducer,
@@ -40,8 +50,12 @@ const store = (
 	)
 )
 
+console.log("F:");
+
 epicMiddleware
 .run(rootEpic)
+
+console.log("G:");
 
 of(store)
 .pipe(
@@ -50,9 +64,11 @@ of(store)
 	tap(createWebSocketServers()),
 	tap(
 		runTasks(
-			'lint',
+			//'lint',
 			'serve',
 		)
 	),
 )
 .subscribe()
+
+console.log("H:");

@@ -42,6 +42,7 @@
     "ws": "^7.1.2"
   },
   "devDependencies": {
+    "@ava/babel": "^2.0.0",
     "@ghadyani-eslint/eslint-config-node": "^1.1.6",
     "eslint": "^6.5.1"
   },
